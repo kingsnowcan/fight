@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue_test</title>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <style>
+        *{margin: 0;padding: 0;border: 0}
+        li{list-style: none;}
+        .flex_contain{display: flex;background: #CCC;padding: 1rem;border: 1px dashed #666}
+        .flex_contain li{background: #0099cc;color: #FFF;padding: 3rem;margin: 1rem;border: 1px solid #FFFFFF;}
+        .row1{ flex-direction:row; }
+        .row2{flex-direction: column;}
+        .row3{align-content: flex-start;}
+        .row4{flex-direction: row;}
+        .row4 li{ margin: 0;}
+        .row4 li:first-child{ width: 30%;}
+        .row4 li:last-child{ width: 70%;}
+        /*.container-2{flex-direction: row-reverse;}
+        .container-3 li,.container-4 li{padding: .5rem 3rem;margin: .2rem 1rem}
+        .container-3{flex-direction: column;}
+        .container-4{flex-direction: column-reverse;}*/
+
+    </style>
+</head>
+<body>
+<div id="title">
+    <h2>好多哈哈</h2>
+ <p>{{fight}}</p>
+    <input v-model="fight">
+    <p><img src="{{pro_img}}"></p>
+    <p><span v-for="n in 10">{{n}}</span></p>
+
+</div>
+<h2>弹性布局</h2>
+<div >
+    <ul class="flex_contain row1">
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+    </ul>
+    <ul class="flex_contain row2">
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+    </ul>
+    <ul class="flex_contain row3">
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+    </ul>
+    <ul class="flex_contain row4">
+        <li>left_nav</li>
+        <li>right_content</li>
+    </ul>
+</div>
+<script>
+    new Vue({
+        el:'#title',
+        data:{
+            fight:'打一场',
+            pro_img:'images/product1.jpg',
+        }
+    })
+
+</script>
+</body>
+</html>

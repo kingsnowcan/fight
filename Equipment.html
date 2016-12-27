@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1.0,width=device-width" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>装备中心</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="header">
+        <a class="back_arrow" href="">返回</a>
+        <h1>装备中心</h1>
+        <a class="share"></a>
+    </div>
+</header>
+<section class="bk_box search_wrap">
+    <a class="select_cate">分类</a>
+    <p class="search">
+        <input type="text"value="请输入搜索商品" onfocus="if(this.value=='请输入搜索商品'){this.value='';}"  onblur="if(this.value==''){this.value='请输入搜索商品';}">
+        <a>搜索</a>
+    </p>
+</section>
+<div class="left_class">
+    <ul>
+        <li><a>全部</a></li>
+        <li><a>鞋子</a></li>
+        <li><a>眼镜</a></li>
+        <li><a>器材</a></li>
+        <li><a>衣服</a></li>
+        <li><a>零食</a></li>
+        <li><a>饮料</a></li>
+        <li><a>眼镜</a></li>
+        <li><a>器材</a></li>
+        <li><a>衣服</a></li>
+    </ul>
+</div>
+<div class="product_show_wrap">
+    <a class="pro_show" href="pro_detail.html">
+        <p class="pro_img"><img src="images/pro_2.jpg"> </p>
+        <p class="pro_title">三鹿奶粉三鹿奶粉三鹿奶粉三三鹿奶粉三鹿奶粉三鹿奶粉三</p>
+        <p class="pro_money">￥165.00</p>
+    </a>
+    <a class="pro_show">
+        <p class="pro_img"><img src="images/pro_2.jpg"> </p>
+        <p class="pro_title">三鹿奶粉三鹿奶粉三鹿奶粉三三鹿奶粉三鹿奶粉三鹿奶粉三</p>
+        <p class="pro_money">￥165.00</p>
+    </a>
+    <a class="pro_show">
+        <p class="pro_img"><img src="images/pro_2.jpg"> </p>
+        <p class="pro_title">三鹿奶粉三鹿奶粉三鹿奶粉三三鹿奶粉三鹿奶粉三鹿奶粉三</p>
+        <p class="pro_money">￥165.00</p>
+    </a>
+    <a class="pro_show">
+        <p class="pro_img"><img src="images/pro_2.jpg"> </p>
+        <p class="pro_title">三鹿奶粉三鹿奶粉三鹿奶粉三三鹿奶粉三鹿奶粉三鹿奶粉三</p>
+        <p class="pro_money">￥165.00</p>
+    </a>
+    <a class="pro_show">
+        <p class="pro_img"><img src="images/pro_2.jpg"> </p>
+        <p class="pro_title">三鹿奶粉三鹿奶粉三鹿奶粉三三鹿奶粉三鹿奶粉三鹿奶粉三</p>
+        <p class="pro_money">￥165.00</p>
+    </a>
+    <a class="pro_show">
+        <p class="pro_img"><img src="images/pro_2.jpg"> </p>
+        <p class="pro_title">三鹿奶粉三鹿奶粉三鹿奶粉三三鹿奶粉三鹿奶粉三鹿奶粉三</p>
+        <p class="pro_money">￥165.00</p>
+    </a>
+</div>
+<!--底部导航-->
+<div class="mainMenuWrap">
+    <div class="mainMenu">
+        <a class=" a1" href="class_index.html">
+            <div class="thumb"></div>
+            <p>活动</p>
+        </a>
+        <a class="cur a2" href="Equipment.html">
+            <div class="thumb"></div>
+            <p>装备中心</p>
+        </a>
+        <a class="a3" href="car.html">
+            <div class="thumb"></div>
+            <p>购物车</p>
+        </a>
+        <a class="a4" href="order_Acti.html">
+            <div class="thumb"></div>
+            <p>我的订单</p>
+        </a>
+    </div>
+</div>
+<script type="text/javascript">
+$(function(){
+//获取要定位元素距离浏览器顶部的距离
+var navH = $(".search_wrap").offset().top;
+//var left_Nav=$(".left_class").offset().top;
+//滚动条事件
+$(window).scroll(function(){
+//获取滚动条的滑动距离
+var scroH = $(this).scrollTop();
+//滚动条的滑动距离大于等于定位元素距离浏览器顶部的距离，就固定，反之就不固定
+if(scroH>=navH){
+$(".search_wrap").css({"position":"fixed","top":0});
+}else if(scroH<navH){
+$(".search_wrap").css({"position":"static"});
+}
+})
+/*if(scroH>=left_Nav){
+    $(".left_class").css({"position":"fixed","top":50});
+}else if(scroH<left_Nav){
+    $(".left_class").css({"position":"static"});
+}*/
+})
+    $(".select_cate").click(function(){
+        $(".left_class").toggle();
+    })
+</script>
+</body>
+</html>

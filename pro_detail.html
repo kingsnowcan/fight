@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1.0,width=device-width" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>商品详情</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="header">
+        <a class="back_arrow" href="">返回</a>
+        <h1>商品详情</h1>
+        <a class="share"></a>
+    </div>
+</header>
+<div class="pro_main">
+<div class="pro_show_photo">
+    <ul>
+        <li><img src="images/product_big.jpg"> </li>
+       <!-- <li><img src="images/product_big.jpg"> </li>
+        <li><img src="images/product_big.jpg"> </li>-->
+    </ul>
+    <div class="pro_num_wrap">
+        <span><em>1</em>/3</span>
+    </div>
+</div>
+<p class="pro_title">三鹿奶粉三鹿奶粉三鹿奶粉三鹿奶粉三鹿奶粉三</p>
+<p class="pro_p">￥500.00</p>
+<div class="selected_wrap">
+    <a>已选<span>规格是黑色的</span><em></em></a>
+</div>
+</div>
+<div class="bottom_btn">
+    <a class="car">加入购物车</a>
+    <a class="buy">立即购买</a>
+</div>
+<div class="select_color_wrap">
+    <div class="position">
+    <p class="pro_little">
+        <a><img src="images/product1.jpg"> </a>
+        <span>商品编号：183759</span>
+    </p>
+    <div class="color_wrap">
+        <span>颜色</span>
+        <ul>
+            <li>黑色</li>
+            <li>白色</li>
+            <li>灰色</li>
+            <li>黄色</li>
+        </ul>
+    </div>
+    <div class="select_num clear">
+       <span class="num">数量</span>
+        <a class="pr_add">
+        <span class="sub">-</span>
+        <em>1</em>
+        <span class="add">+</span>
+        </a>
+    </div>
+    <p class="ensure"><a>确认</a></p>
+    </div>
+</div>
+<script type="text/javascript">
+    $(".selected_wrap").click( function(){
+        $(".select_color_wrap").toggle();
+        $(".select_color_wrap").css({"position":"fixed","top":0})
+        $(".ensure").css({"position":"absolute","bottom":0})
+    })
+</script>
+</body>
+</html>

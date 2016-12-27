@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1.0,width=device-width" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>购物车</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="header">
+        <a class="back_arrow" href="">返回</a>
+        <h1>购物车</h1>
+        <a class="share"></a>
+    </div>
+</header>
+<section class="bk_box car_pro">
+    <p class="title_logo"><a class="select_wrap"></a><em></em>打一场</p>
+    <div class="pro_car_detail">
+        <a class="select_wrap check" data-checked="1"></a>
+        <a class="pro_2"><img src="images/pro_2.jpg"></a>
+        <div class="right_car">
+            <p class="pro_name">欧克利男士眼镜欧克利男士眼镜欧克欧欧克利男士眼</p>
+            <p class="pro_cate">分类 : 灰色</p>
+            <p class="pr_num">
+                <span class="car_price">￥<em>35.0</em></span>
+                <a class="pr_add">
+                    <span class="sub">-</span>
+                    <em class="a_num">1</em>
+                    <span class="add">+</span>
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="pro_car_detail">
+        <a class="select_wrap" data-checked="0"></a>
+        <a class="pro_2"><img src="images/pro_2.jpg"></a>
+        <div class="right_car">
+            <p class="pro_name">欧克利男士眼镜欧克利男士眼镜欧克欧欧克利男士眼</p>
+            <p class="pro_cate">分类 : 灰色</p>
+            <p class="pr_num">
+                <span class="car_price">￥<em>35.0</em></span>
+                <a class="pr_add">
+                    <span class="sub">-</span>
+                    <em class="a_num">1</em>
+                    <span class="add">+</span>
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+<div class="pay_wrap car_pay">
+    <a class="select"><em></em>全选</a>
+    <a class="order_btn submit pay_btn">立即结算</a>
+    <a class="sum_wrap pay">
+        <p class="sum">合计:￥<span>100</span></p>
+        <p class="carri">(运费23元)</p>
+    </a>
+</div>
+<!--底部导航-->
+<div class="mainMenuWrap">
+    <div class="mainMenu">
+        <a class="a1" href="class_index.html">
+            <div class="thumb"></div>
+            <p>活动</p>
+        </a>
+        <a class=" a2" href="Equipment.html">
+            <div class="thumb"></div>
+            <p>装备中心</p>
+        </a>
+        <a class=" cur a3" href="car.html">
+            <div class="thumb"></div>
+            <p>购物车</p>
+        </a>
+        <a class="a4" href="order_Acti.html">
+            <div class="thumb"></div>
+            <p>我的订单</p>
+        </a>
+    </div>
+</div>
+<script>
+    $(".select_wrap").each(function()
+    {
+        $(this).click(function(){
+            var a = $(this);
+            var checked = $(a).attr("data-checked");
+
+            if(checked==0)
+            {
+                $(a).addClass("check")
+                $(a).attr("data-checked","1");
+            }
+            else
+            {
+                $(a).removeClass("check")
+                $(a).attr("data-checked","0");
+            }
+        });
+    });
+</script>
+<script>
+    $(function(){
+        $(".add").click(function(){
+            var t=$(this).parent().find('em[class*=a_num]');
+            t.text(parseInt(t.text())+1)
+            setTotal();
+        })
+        $(".sub").click(function(){
+            var t=$(this).parent().find('em[class*=a_num]');
+            t.text(parseInt(t.text())-1)
+            if(parseInt(t.text())<0){
+                t.text(0);
+            }
+            setTotal();
+        })
+        function setTotal(){
+            var s=0;
+            $(".right_car .pr_num").each(function(){
+                s+=parseInt($(this).find('em[class*=a_num]').text())*parseFloat($(this).parent().find('span[class*=car_price] em').text());
+            });
+            $(".sum span").html(s.toFixed(2));
+        }
+        setTotal();
+
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1.0,width=device-width" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>确认订单</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="header">
+        <a class="back_arrow" href="">返回</a>
+        <h1>我的订单</h1>
+        <a class="share"></a>
+    </div>
+</header>
+<section class="bk_box info_wrap">
+    <p class="cus_info"><span class="customer">收货人</span>
+        <span class="phone">12312341234</span></p>
+    <p class="clear">收货地址：地址啊地址啊地址啊地址啊</p>
+    <a href="Address_edit.html"><img src="images/right_arrow.png"></a>
+</section>
+<p class="pay_title">支付方式</p>
+<section class="bk_box pay_all">
+    <p class="zfb"><em></em>支付宝<a class="no_checked" data-checked="0"></a></p>
+    <p class="wx"><em></em>微信支付<a class="checked" data-checked="1"></a></p>
+</section>
+<p class="pay_title">已选商品</p>
+<section class="bk_box pro_detail_wrap">
+    <p class="title_logo"><em></em>打一场</p>
+    <div class="pro">
+        <a class="pro_photo"><img src="images/product1.jpg"> </a>
+        <a class="pro_des">叼炸天商品叼炸天商品叼炸天商品叼天商品叼炸天商品天商品叼炸天商品天商品叼炸天商品天商品叼炸天商品</a>
+        <a class="pro_price">
+            <p class="p_m">￥350.00</p>
+            <p class="p_num">×1</p>
+        </a>
+    </div>
+    <p class="ex_money clear">运费:<span>￥0.00</span></p>
+    <p class="ex_money">实付款:<span class="end_sum">￥350.00</span></p>
+</section>
+<div class="pay_wrap">
+    <a class="order_btn submit pay_btn">确认下单</a>
+    <a class="sum_wrap pay">
+        <p class="sum">合计:<span>￥100</span></p>
+        <p class="carri">(运费23元)</p>
+    </a>
+</div>
+<script>
+    $(".pay_all p a").each(function()
+    {
+        $(this).click(function(){
+            var a = $(this);
+            var checked = $(a).attr("data-checked");
+
+            if(checked==0)
+            {
+                $(a).css("background-position","right center");
+                $(a).attr("data-checked","1");
+            }
+            else
+            {
+                $(a).css("background-position","left center");
+                $(a).attr("data-checked","0");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1.0,width=device-width" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>地址管理</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="header">
+        <a class="back_arrow" href="">返回</a>
+        <h1>地址管理</h1>
+        <a class="share"></a>
+    </div>
+</header>
+<section class="bk_box address_wrap">
+    <p><span>王雪可</span><span>13691699016</span></p>
+    <p class="address">广东省深圳市南山区大冲商务中心B座9楼</p>
+    <div class="edit_wrap">
+        <a class="select_wrap"><em data-checked="0"></em>默认地址</a>
+        <a class="delete">删除</a>
+        <a class="edit">编辑</a>
+
+    </div>
+</section>
+<section class="bk_box address_wrap">
+    <p><span>王雪可</span><span>13691699016</span></p>
+    <p class="address">广东省深圳市南山区大冲商务中心B座9楼</p>
+    <div class="edit_wrap">
+        <a class="select_wrap"><em class="check" data-checked="1"></em>默认地址</a>
+        <a class="delete">删除</a>
+        <a class="edit" href="new_address.html">编辑</a>
+    </div>
+</section>
+<div class="add_bottom">
+    <a href="new_address.html"><em></em>新增地址</a>
+</div>
+<script>
+    $(".select_wrap em").each(function()
+    {
+        $(this).click(function(){
+            var em = $(this);
+            var checked = $(em).attr("data-checked");
+
+            if(checked==0)
+            {
+                $(em).addClass("check");
+                $(em).attr("data-checked","1");
+            }
+            else
+            {
+                $(em).removeClass("check");
+                $(em).attr("data-checked","0");
+            }
+        });
+    });
+</script>
+</body>
+</html>
